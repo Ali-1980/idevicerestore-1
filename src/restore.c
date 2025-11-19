@@ -5574,6 +5574,7 @@ int restore_device(struct idevicerestore_client_t* client, plist_t build_identit
 		if (err < 0) {
 			logger(LL_ERROR, "Unable to successfully restore device\n");
 			client->flags |= FLAG_QUIT;
+			break;
 		}
 
 		restore_error = restored_receive(restore, &message);
